@@ -18,7 +18,7 @@ class App extends Component {
   searchForGifs = async (event) => {
     event.preventDefault();
     try {
-      const response = await fetch(`http://api.giphy.com/v1/gifs/search?api_key=${this.apiKey}&q=${this.state.searchQuery}&rating=g`);
+      const response = await fetch(`https://api.giphy.com/v1/gifs/search?api_key=${this.apiKey}&q=${this.state.searchQuery}&rating=g`);
       const gifData = await response.json();
       console.log(gifData);
       this.setState({gifs: gifData.data, searchQuery: ''})
